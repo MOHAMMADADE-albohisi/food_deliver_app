@@ -47,25 +47,19 @@ class _login_screenState extends State<login_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Image.asset(
-            'images/image1.png',
-            height: double.infinity,
-            fit: BoxFit.cover,
-          ),
           Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: AlignmentDirectional.topStart,
-                end: AlignmentDirectional.bottomEnd,
-                colors: [
-                  Colors.transparent,
-                  Color(0xFF000000),
-                ],
-              ),
+            decoration: BoxDecoration(
+              image: DecorationImage(fit: BoxFit.cover,image: AssetImage(
+                'images/image1.png',
+
+
+              ),),
             ),
           ),
+
           ListView(
             children: [
               Padding(
@@ -275,7 +269,20 @@ class _login_screenState extends State<login_screen> {
       ),
     );
   }
-
+/*
+* Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: AlignmentDirectional.topStart,
+                end: AlignmentDirectional.bottomEnd,
+                colors: [
+                  Colors.transparent,
+                  Color(0xFF000000),
+                ],
+              ),
+            ),
+          ),
+* */
   void performaLogin() {
     if (checkData()) {
       login();

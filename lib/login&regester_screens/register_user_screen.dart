@@ -54,6 +54,7 @@ class _register_user_screenState extends State<register_user_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Image.asset(
@@ -61,6 +62,7 @@ class _register_user_screenState extends State<register_user_screen> {
             width: double.infinity,
             fit: BoxFit.cover,
             height: double.infinity,
+
           ),
           Container(
             decoration: const BoxDecoration(

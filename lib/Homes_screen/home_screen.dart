@@ -69,7 +69,7 @@ class _home_screenState extends State<home_screen> {
                 ),
                 suffixIcon: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add_road_rounded,
                       color: Color(0xFF9AAAAE),
                     )),
@@ -204,91 +204,55 @@ class _home_screenState extends State<home_screen> {
               ),
             ),
             const SizedBox(height: 9),
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxHeight: 200),
-              child: GridView.builder(
-                itemCount: 4,
+            GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
                 scrollDirection: Axis.vertical,
+                itemCount: 10,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
+                  mainAxisSpacing: 20,
                   crossAxisSpacing: 18.6,
-                  mainAxisSpacing: 17.8,
-                  childAspectRatio: 150 / 194,
                 ),
                 itemBuilder: (context, index) {
                   return Container(
+                    width: 158.2,
+                    height: 194.2,
                     decoration: BoxDecoration(
+                      color: Color(0xFFFFFFFF),
                       borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFFFFFFFF),
                     ),
                     child: Column(
                       children: [
-                        Image.asset('images/image13.png', fit: BoxFit.cover),
-                        const SizedBox(height: 8),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24.1),
-                          child: Text(
-                            'Mojito',
-                            style: GoogleFonts.openSans(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700,
-                                color: const Color(0xFF566265)),
+                          padding: EdgeInsetsDirectional.zero,
+                          child: Image.asset(
+                            'images/image11.png',
+                            width: double.infinity,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(height: 25),
-                        Row(
-                          children: [
-                            SizedBox(width: 10),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.question_answer_outlined,
-                                color: Color(0xFF9BABAE),
-                              ),
-                            ),
-                            Text(
-                              '261',
-                              style: GoogleFonts.openSans(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: const Color(0xFF9AAAAE),
-                              ),
-                            ),
-                            const Spacer(),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.shopping_cart_outlined,
-                                color: Color(0xFF9BABAE),
-                              ),
-                            ),
-                            Text(
-                              '1',
-                              style: GoogleFonts.openSans(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: const Color(0xFF9AAAAE),
-                              ),
-                            ),
-                            const SizedBox(width: 5),
-                            Text(
-                              '367',
-                              style: GoogleFonts.openSans(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: const Color(0xFF9AAAAE),
-                              ),
-                            ),
-                            SizedBox(width: 21),
-                          ],
-                        )
+                        const SizedBox(height: 8),
+                        Text(
+                          'Pepperoni',
+                          style: GoogleFonts.openSans(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 12,
+                            color: const Color(0xFF566265),
+                          ),
+                        ),
+                        Text(
+                          'Homemade Pizza',
+                          style: GoogleFonts.openSans(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 12,
+                            color: const Color(0xFF566265),
+                          ),
+                        ),
                       ],
                     ),
                   );
-                },
-              ),
-            ),
-            const SizedBox(height: 13.2),
+                }),
           ],
         ),
       ),

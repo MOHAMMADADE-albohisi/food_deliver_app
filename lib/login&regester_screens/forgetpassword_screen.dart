@@ -30,6 +30,7 @@ class _forget_passwordState extends State<forget_password> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Image.asset(
